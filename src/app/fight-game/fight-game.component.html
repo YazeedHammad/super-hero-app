@@ -1,1 +1,84 @@
-<p>fight-game works!</p>
+<div class="fight-container">
+  <app-nav></app-nav>
+  <div class="game-control">
+    <h1 class="title">Super Heroes Fight</h1>
+    <button class="btn btn-success control" (click)="onFight()">Fight</button>
+    <button class="btn btn-danger control" (click)="onReset()">Reset</button>
+    <div class="row">
+      <div class="col-sm-6 ">
+        <select
+          (change)="selectedFirstHero($event)"
+          class="custom-select-lg btn btn-info "
+        >
+          <option>First Fighter ...</option>
+          <option *ngFor="let hero of heros" [value]="hero[1].name">
+            {{ hero[1].name }}
+          </option>
+        </select>
+      </div>
+      <div class="col-sm-6 ">
+        <select
+          (change)="selectedSecHero($event)"
+          class="custom-select-lg btn btn-warning"
+        >
+          <option>Second Fighter ...</option>
+          <option *ngFor="let hero of heros" [value]="hero[1].name">{{
+            hero[1].name
+          }}</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="fight-street">
+    <div class="powers row">
+      <div class="col-sm-6">
+        <progressbar
+          (ngModel)="(firstIndex)"
+          *ngIf="heros.length && firstIndex"
+          [value]="firstFighterHealth"
+          type="info"
+          [striped]="true"
+          class="first-power power"
+          (ngModel)="(firstFighterHealth)"
+        ></progressbar>
+      </div>
+      <div class="col-sm-6">
+        <progressbar
+          (ngModel)="(secIndex)"
+          *ngIf="heros.length && secIndex"
+          [value]="secFighterHealth"
+          type="warning"
+          [striped]="true"
+          class="sec-power power"
+          (ngModel)="(secFighterHealth)"
+        ></progressbar>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4 offset-2">
+        <img
+          (ngModel)="(firstIndex)"
+          *ngIf="heros.length && firstIndex"
+          src="{{ heros[firstIndex][1].images.md }}"
+          alt="Fighter-1"
+          class="fighter fighter-1"
+          id="fighter-1"
+          [@first]="state"
+          (@first.done)="firstDone()"
+        />
+      </div>
+      <div class="col-sm-4">
+        <img
+          (ngModel)="(secIndex)"
+          *ngIf="heros.length && secIndex"
+          src="{{ heros[secIndex][1].images.md }}"
+          alt="Fighter-2"
+          class="fighter fighter-2"
+          id="fighter-2"
+          [@second]="state2"
+          (@second.done)="secDone()"
+        />
+      </div>
+    </div>
+  </div>
+</div>

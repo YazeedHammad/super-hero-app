@@ -1,0 +1,83 @@
+.fight-container {
+  background: url("../../assets/images/fight-game-bg.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 99vw;
+  height: 120vh;
+
+  .game-control {
+    text-align: center;
+    padding: 50px;
+
+    .title {
+      color: white;
+      font-size: 3vw;
+      font-family: "Courier New", Courier, monospace;
+      font-weight: bold;
+    }
+
+    .control {
+      padding: 10px;
+      font-size: 20px;
+      margin: 50px;
+      width: 150px;
+    }
+  }
+
+  .fight-street {
+    border-radius: 5%;
+    box-shadow: 25px 25px 25px rgb(31, 31, 31);
+    background: url("https://i.imgur.com/lmwuDMr.gif");
+    background-size: cover;
+    max-width: 80vw;
+    height: 70vh;
+    margin: 40px auto;
+    margin-top: 50px;
+    opacity: 0.9;
+    box-shadow: 5px 0 50px #f7347c8c;
+
+    .powers {
+      .power {
+        max-width: 50rem;
+        height: 3rem;
+      }
+
+      .sec-power {
+        float: right;
+        transform: rotate(180deg);
+      }
+    }
+
+    .fighter {
+      position: relative;
+      border-radius: 150px;
+      width: 50%;
+      height: 45vh;
+      opacity: 0.9;
+    }
+
+    .fighter-1 {
+      display: inline;
+      top: 40%;
+      left: 25%;
+      border: solid 1vw rgb(1, 152, 202);
+    }
+
+    .fighter-2 {
+      top: 40%;
+      right: 25%;
+      float: right;
+      border: solid 1vw rgb(255, 187, 51);
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .fight-container,
+  .game-control,
+  .fight-street {
+    width: 100%;
+  }
+}
