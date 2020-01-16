@@ -1,27 +1,55 @@
-# SuperHeroApp
+# Welcome To Super Heroes Game App!
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.23.
+![Home Page](img/home-page.png)
 
-## Development server
+This app use [Super Heroes API](https://akabab.github.io/superhero-api/api/all.json), and contain three games: race game, math game, and fight game, there is also a page that contain informations about heroes.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+#### Race Game:
 
-## Code scaffolding
+Depending of the speed of the character it will display a horizontal line that selected characters will compete on to see which arrive sooner, then show the winner.
+![Race Game](img/race-game.png)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+#### Math Game:
 
-## Build
+It's a a game that give each of the super hero 5 random math question depending on the intelligence of the hero to show who could solve it faster, then show the winner.
+![Math Game](img/math-game.png)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+#### Fight Game:
 
-## Running unit tests
+Depending on durability & combat & strength as defense and power as attack the two superheroes will take turns on the attack to see which will survive more.
+![Fight Game](img/fight-game.png)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+#### About Heroes:
 
-## Running end-to-end tests
+This page display each superhero with its information like : super hero name, real name, first appearance, power stats …etc.
+![About Heroes](img/about-heroes.png)
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## SuperHeroProject
 
-## Further help
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Development
+
+### Installing Dependencies
+
+From within the root directory:
+
+```sh
+npm install
+```
+
+### Run App
+
+From within the root directory:
+
+```sh
+ng serve
+```
+
+OR
+
+```sh
+npm start
+```
+
+Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
