@@ -1,0 +1,74 @@
+.math-container {
+  // background: url('https://i.ytimg.com/vi/-MKapbz0GIo/maxresdefault.jpg');
+  background: url("https://hellofuture.orange.com/app/uploads/2018/01/Intro-HELLO-FUTURE-1920x1080_v2.gif");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 99vw;
+  height: 120vh;
+
+  .game-control {
+    text-align: center;
+    padding: 50px;
+
+    .title {
+      color: white;
+      font-size: 3vw;
+      font-family: "Courier New", Courier, monospace;
+      font-weight: bold;
+    }
+
+    .control {
+      padding: 10px;
+      font-size: 20px;
+      margin: 50px;
+      width: 150px;
+    }
+  }
+
+  .competition {
+    padding-left: 12%;
+
+    .firstCompetitor {
+      background-color: rgba(1, 152, 202, 0.5);
+      padding-left: 0;
+    }
+
+    .question {
+      font-size: 2vw;
+      font-weight: bold;
+      color: rgb(243, 233, 233);
+      text-align: left;
+    }
+
+    .answer {
+      font-size: 2.5vw;
+      font-weight: bold;
+      color: rgb(8, 184, 8);
+    }
+
+    .randomNumber {
+      font-size: 2.5vw;
+      font-weight: bold;
+      color: red;
+    }
+
+    .secCompetitor {
+      background-color: rgba(255, 187, 51, 0.9);
+      padding-left: 0;
+    }
+
+    .competitor-img {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .math-container,
+  .game-control,
+  .competition {
+    width: 100%;
+  }
+}

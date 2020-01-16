@@ -1,1 +1,95 @@
-<p>home works!</p>
+<div class="home-container">
+  <app-nav></app-nav>
+  <div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12 home-welcome">
+      <div class="logo">
+        <img
+          class="logo-img"
+          src="../../assets/images/marvel-logo.png"
+          alt="marvel logo"
+        />
+        <h1 class="welcome">Welcome To Super Heroes World!</h1>
+      </div>
+      <p class="welcome-p">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae sit in
+        adipisci ea, velit optio eaque itaque perspiciatis doloribus neque
+        delectus culpa voluptate eveniet vero autem harum vel ipsam architecto!
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed voluptatem
+        maxime, quibusdam in error obcaecati rem reprehenderit aspernatur quos
+        saepe autem praesentium quisquam necessitatibus, soluta nam animi natus
+        corporis?
+      </p>
+    </div>
+  </div>
+  <div class="row cards-container">
+    <div class="col-sm-12 col-md-6 col-lg-3">
+      <div class="card">
+        <img
+          class="card-img-top"
+          src="../../assets/images/race-game-card.jpg"
+          alt="Card image"
+        />
+        <div class="card-body">
+          <h4 class="card-title text-danger">Race Game</h4>
+          <p class="card-text">
+            Depending of the speed of the character it will display a horizontal
+            line that selected characters will compete on to see which arrive
+            sooner, then show the winner.
+          </p>
+          <a
+            [routerLink]="['/race/main']"
+            routerLinkActive="router-link-active"
+            class="btn btn-primary"
+            >Start Game</a
+          >
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3 col-md-6 col-lg-3">
+      <div class="card">
+        <img
+          class="card-img-top"
+          src="../../assets/images/fight-game-card.jpg"
+          alt="Card image"
+        />
+        <div class="card-body">
+          <h4 class="card-title text-danger">Fight Game</h4>
+          <p class="card-text">
+            Depending on durability & combat & strength as defense and power as
+            attack the two superheroes will take turns on the attack to see
+            which will survive more.
+          </p>
+          <a
+            [routerLink]="['/fight/main']"
+            routerLinkActive="router-link-active"
+            class="btn btn-primary"
+            >Start Game</a
+          >
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3 col-md-6 col-lg-3">
+      <div class="card">
+        <img
+          class="card-img-top"
+          src="../../assets/images/math-game-card.jpg"
+          alt="Card image"
+        />
+        <div class="card-body">
+          <h4 class="card-title text-danger">Math Game</h4>
+          <p class="card-text">
+            It's a a game that give each of the super hero 5 random math
+            question depending on the intelligence of the hero to show who could
+            solve it faster, then show the winner.
+          </p>
+          <a
+            [routerLink]="['/math/main']"
+            routerLinkActive="router-link-active"
+            class="btn btn-primary"
+            >Start Game</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

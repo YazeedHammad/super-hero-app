@@ -1,0 +1,90 @@
+.home-container {
+  // background: url('https://thewallpaper.co//wp-content/uploads/2017/08/scifi-thriller-drawing-adventure-resurgence-day-futuristic-space-action-background-independence-computers-aliens-spaceship-cool-alien.jpg');
+  background-image: url("../../assets/images/home-bg.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 120vh;
+
+  .home-welcome {
+    background-image: linear-gradient(
+      to bottom,
+      #f7347c8c,
+      rgba(0, 0, 0, 0.747)
+    );
+    border-radius: 20%;
+    width: 40vw;
+    height: 30%;
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    padding: 1rem;
+
+    .logo {
+      margin-bottom: 2rem;
+
+      .welcome {
+        font-size: 2.2vw;
+        font-weight: bold;
+      }
+
+      .welcome-p {
+        font-size: 1vw;
+      }
+
+      .logo-img {
+        width: 7vw;
+        height: 7vh;
+      }
+    }
+  }
+
+  .cards-container {
+    display: flex;
+    position: relative;
+    width: 99%;
+    top: 40%;
+    left: 3%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    opacity: 0.9;
+
+    .card {
+      width: 75%;
+      height: 100%;
+      border: solid 0.5px #333;
+      border-radius: 50px;
+      box-shadow: 5px 5px 50px #f7347c8c;
+      transition: transform 1.3s;
+      overflow: hidden;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    .card-img-top {
+      width: 100%;
+      height: 300px;
+    }
+
+    .card-title {
+      font-weight: bold;
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .home-container,
+  .cards-container,
+  .card {
+    width: 100%;
+  }
+}

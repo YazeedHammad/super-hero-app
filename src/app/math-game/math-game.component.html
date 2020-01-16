@@ -1,1 +1,82 @@
-<p>math-game works!</p>
+<div class="math-container">
+  <app-nav></app-nav>
+  <div class="game-control">
+    <h1 class="title">Super Heroes Competition</h1>
+    <button class="btn btn-success control" (click)="onStart()">Start</button>
+    <button class="btn btn-danger control" (click)="onReset()">Reset</button>
+    <div class="row">
+      <div class="col-sm-6 ">
+        <select
+          (change)="selectedHero($event, 1)"
+          class="custom-select-lg btn btn-info "
+        >
+          <option>First Competitor ...</option>
+          <option *ngFor="let hero of heros" [value]="hero[1].name">
+            {{ hero[1].name }}
+          </option>
+        </select>
+      </div>
+      <div class="col-sm-6 ">
+        <select
+          (change)="selectedHero($event, 2)"
+          class="custom-select-lg btn btn-warning"
+        >
+          <option>Second Competitor ...</option>
+          <option *ngFor="let hero of heros" [value]="hero[1].name">{{
+            hero[1].name
+          }}</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="competition row" *ngIf="isSelected === true">
+    <div class="col-sm-5 firstCompetitor">
+      <div class="row">
+        <div class="col-sm-4">
+          <img
+            (ngModel)="(firstIndex)"
+            *ngIf="heros.length && firstIndex"
+            src="{{ heros[firstIndex][1].images.md }}"
+            class="competitor-img"
+          />
+        </div>
+        <div class="col-sm-8" *ngIf="heros.length && firstIndex">
+          <span class="question" *ngFor="let q of questionsFirst; let i = index"
+            >{{ q.question }} =
+            <span *ngIf="i < firstCounter" class="answer">{{ q.answer }}</span>
+            <span *ngIf="i === firstCounter" class="randomNumber">{{
+              randomNumber
+            }}</span>
+            <br
+          /></span>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-5 secCompetitor">
+      <div class="row">
+        <div class="col-sm-4">
+          <img
+            (ngModel)="(secIndex)"
+            *ngIf="heros.length && secIndex"
+            src="{{ heros[secIndex][1].images.md }}"
+            class="competitor-img"
+          />
+        </div>
+        <div class="col-sm-8" *ngIf="heros.length && secIndex">
+          <span
+            class="question"
+            *ngFor="let q of questionsSecond; let i = index"
+            (ngModel)="(rnd)"
+            >{{ q.question }} =
+            <span *ngIf="i < secondCounter" class="answer">{{ q.answer }}</span>
+            <span *ngIf="i === secondCounter" class="randomNumber">{{
+              randomNumber
+            }}</span>
+            <br
+          /></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
