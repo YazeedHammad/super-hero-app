@@ -1,0 +1,130 @@
+.race-container {
+  background: url("https://data.whicdn.com/images/277379761/original.gif");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 99vw;
+  height: 120vh;
+
+  .game-control {
+    text-align: center;
+    padding: 50px;
+
+    .title {
+      color: whitesmoke;
+      font-size: 3vw;
+      font-family: "Courier New", Courier, monospace;
+      font-weight: bold;
+    }
+
+    .control {
+      padding: 10px;
+      font-size: 20px;
+      margin: 50px;
+      width: 150px;
+      box-shadow: 5px 5px 5px #333;
+    }
+
+    .racerName {
+      font-size: 20px;
+      color: gray;
+
+      .firstRacer {
+        display: inline;
+        padding: 15%;
+      }
+
+      .secRacer {
+        display: inline;
+        padding: 15%;
+      }
+    }
+  }
+
+  .raceEnviroment {
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 2%;
+    box-shadow: 5px 0px 50px #f7347c8c;
+
+    .forest {
+      background: url("../../assets/images/forest.jpg") center left;
+      height: 300px;
+    }
+
+    .racetrack {
+      background: url("../../assets/images/road.jpg") center;
+      height: 330px;
+      border-right: dashed 15px white;
+      box-sizing: border-box;
+      margin: 40px auto;
+      margin-top: 0;
+
+      .racer {
+        display: block;
+        position: relative;
+        border: none;
+        border-radius: 150px;
+        width: 130px;
+        height: 130px;
+        opacity: 0.7;
+      }
+
+      .racer-1 {
+        top: 10px;
+      }
+
+      .racer-2 {
+        top: 60px;
+      }
+    }
+  }
+
+  .raceInfoContainer {
+    width: 50%;
+    margin: 40px auto 0;
+    background: #333;
+    height: 200px;
+    text-align: center;
+
+    .result {
+      color: white;
+      border-bottom: solid 1px white;
+      padding: 20px 0;
+    }
+
+    .raceInfo {
+      font-size: 30px;
+      font-weight: bold;
+      color: white;
+      width: 50%;
+      float: left;
+    }
+
+    .raceInfo span {
+      display: block;
+      font-weight: normal;
+      font-size: 18px;
+      color: white;
+    }
+
+    .racerInfo-1 {
+      color: #0099cc;
+    }
+
+    .racerInfo-2 {
+      color: #ffbb33;
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .race-container,
+  .game-control,
+  .forest,
+  .racetrack,
+  .raceInfoContainer {
+    width: 100%;
+  }
+}

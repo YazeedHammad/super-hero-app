@@ -1,1 +1,67 @@
-<p>race-game works!</p>
+<div class="race-container">
+  <app-nav></app-nav>
+  <div class="game-control">
+    <h1 class="title">Super Heroes Race</h1>
+    <button class="btn btn-success control" (click)="onRace()">Race</button>
+    <button class="btn btn-danger control" (click)="onReset()">Reset</button>
+    <div class="row">
+      <div class="col-sm-6">
+        <select
+          (change)="selectedFirstHero($event)"
+          class="custom-select-lg btn btn-info "
+        >
+          <option>First Racer ...</option>
+          <option *ngFor="let hero of heros" [value]="hero[1].name">
+            {{ hero[1].name }}
+          </option>
+        </select>
+      </div>
+      <div class="col-sm-6">
+        <select
+          (change)="selectedSecHero($event)"
+          class="custom-select-lg btn btn-warning"
+        >
+          <option>Second Racer ...</option>
+          <option *ngFor="let hero of heros" [value]="hero[1].name">{{
+            hero[1].name
+          }}</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="raceEnviroment">
+    <div class="forest"></div>
+    <div class="racetrack">
+      <img
+        (ngModel)="(firstIndex)"
+        *ngIf="heros.length && firstIndex"
+        src="{{ heros[firstIndex][1].images.md }}"
+        alt="Racer-1"
+        class="racer racer-1"
+        id="racer-1"
+        [@first]="{ value: state, params: { time: firstRacerTime } }"
+        (@first.done)="firstRacer()"
+      />
+      <img
+        (ngModel)="(secIndex)"
+        *ngIf="heros.length && secIndex"
+        src="{{ heros[secIndex][1].images.md }}"
+        alt="Racer-2"
+        class="racer racer-2"
+        id="racer-2"
+        [@second]="{ value: state, params: { time: secRacerTime } }"
+        (@second.done)="secRacer()"
+      />
+    </div>
+  </div>
+  <div class="raceInfoContainer">
+    <h2 class="result">Results</h2>
+    <hr />
+    <div class="raceInfo racerInfo-1" (ngModel)="(firstRacerName)">
+      {{ firstRacerName }}<span (ngModel)="(place)">{{ place }}</span>
+    </div>
+    <div class="raceInfo racerInfo-2" (ngModel)="(secRacerName)">
+      {{ secRacerName }}<span (ngModel)="(place)">{{ place }}</span>
+    </div>
+  </div>
+</div>
