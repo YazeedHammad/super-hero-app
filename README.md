@@ -43,7 +43,7 @@ npm install
 From within the root directory:
 
 ```sh
-ng serve
+ng serve --open
 ```
 
 OR
