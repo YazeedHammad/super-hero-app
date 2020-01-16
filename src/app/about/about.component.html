@@ -1,1 +1,102 @@
-<p>about works!</p>
+<div class="hero-details-container">
+  <app-nav></app-nav>
+  <div class="row">
+    <div
+      class="text-center hoverable p-4 bio col-7"
+      [ngClass]="{ 'offset-5': odd }"
+      *ngFor="let hero of heros; let odd = odd"
+    >
+      <div class="row">
+        <div class="col-sm-12 col-md-4 col-lg-4 offset-md-1 mx-3 my-3">
+          <div class="view overlay">
+            <img
+              src="{{ hero[1].images.md }}"
+              class="img-fluid"
+              alt="{{ hero[1].name }}"
+            />
+            <a>
+              <div class="mask rgba-white-slight"></div>
+            </a>
+          </div>
+        </div>
+
+        <div
+          class="col-sm-12 col-md-8 col-lg-7 text-md-left ml-3 mt-3 hero-details"
+        >
+          <h4 class="card-title">{{ hero[1].name }}</h4>
+          <p class="card-text">
+            <strong>Full Name:</strong> {{ hero[1].biography.fullName }}
+          </p>
+          <p class="card-text">
+            <strong>First Appearance:</strong>
+            {{ hero[1].biography.firstAppearance }}
+          </p>
+          <p class="card-text">
+            <strong>Relatives:</strong> {{ hero[1].connections.relatives }}
+          </p>
+
+          <div class="mb-2">
+            <strong>Combat:</strong>
+            <progressbar
+              [value]="hero[1].powerstats.combat"
+              type="warning"
+              [striped]="true"
+            >
+              {{ hero[1].powerstats.combat }}%</progressbar
+            >
+          </div>
+
+          <div class="mb-2">
+            <strong>Durability:</strong>
+            <progressbar
+              [value]="hero[1].powerstats.durability"
+              type="danger"
+              [striped]="true"
+            >
+              {{ hero[1].powerstats.durability }}%</progressbar
+            >
+          </div>
+
+          <div class="mb-2">
+            <strong>Intelligence:</strong>
+            <progressbar
+              [value]="hero[1].powerstats.intelligence"
+              [striped]="true"
+            >
+              {{ hero[1].powerstats.intelligence }}%</progressbar
+            >
+          </div>
+
+          <div class="mb-2">
+            <strong>Power:</strong>
+            <progressbar
+              [value]="hero[1].powerstats.power"
+              type="success"
+              [striped]="true"
+            >
+              {{ hero[1].powerstats.power }}%</progressbar
+            >
+          </div>
+
+          <div class="mb-2">
+            <strong>Speed:</strong>
+            <progressbar
+              [value]="hero[1].powerstats.speed"
+              type="info"
+              [striped]="true"
+            >
+              {{ hero[1].powerstats.speed }}%</progressbar
+            >
+          </div>
+
+          <div class="mb-2">
+            <strong>Strength:</strong>
+            <progressbar [value]="hero[1].powerstats.strength" [striped]="true">
+              {{ hero[1].powerstats.strength }}%</progressbar
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
